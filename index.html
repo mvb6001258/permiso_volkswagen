@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elecciones Generales 2025 — Datos Registrados</title>
+  <style>
+    :root {
+      --rojo: #d32f2f;
+      --amarillo: #fbc02d;
+      --verde: #388e3c;
+      --bg: #f8f8f8;
+      --paper: #fff;
+      --ink: #222;
+      --muted: #666;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 40px auto;
+      background: var(--paper);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Marca de agua */
+    .page::after {
+      content: "ELECCIONES GENERALES 2025";
+      position: absolute;
+      inset: 0;
+      text-align: center;
+      top: 30%;
+      font-size: 60px;
+      font-weight: 800;
+      color: rgba(0,0,0,0.05);
+      transform: rotate(-20deg);
+      letter-spacing: 0.1em;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Franja tricolor */
+    .ribbon {
+      background: linear-gradient(90deg, var(--rojo), var(--amarillo), var(--verde));
+      height: 10px;
+      width: 100%;
+    }
+
+    header {
+      padding: 30px 28px 12px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .seal {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, #fff 0 26px, transparent 26px),
+                  conic-gradient(var(--rojo) 0 33%, var(--amarillo) 33% 66%, var(--verde) 66% 100%);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 0 4px #fff, 0 0 0 6px #ccc;
+    }
+    .seal span {
+      font-weight: 900;
+      font-size: 12px;
+      color: #000;
+      background: #fff;
+      padding: 2px 6px;
+      border-radius: 999px;
+    }
+
+    .headings h1 {
+      margin: 0;
+      font-size: 26px;
+      color: var(--rojo);
+    }
+    .headings p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      padding: 24px 28px;
+    }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .card .card-title {
+      background: linear-gradient(90deg, rgba(211,47,47,0.1), rgba(251,192,45,0.1), rgba(56,142,60,0.1));
+      padding: 14px 18px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 18px;
+      color: var(--ink);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+
+    .cell {
+      padding: 14px 18px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .label {
+      font-weight: bold;
+      background: #fafafa;
+      border-right: 1px solid #eee;
+    }
+
+    .value {
+      color: #111;
+    }
+
+    footer {
+      padding: 20px 28px;
+      font-size: 12px;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 700px) {
+      .grid { grid-template-columns: 1fr; }
+      .label { border-right: none; border-bottom: 1px solid #eee; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; border-radius: 0; margin: 0; }
+      .page::after { opacity: 0.05; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="ribbon"></div>
+
+    <header>
+      <div class="seal"><span>EG</span></div>
+      <div class="headings">
+        <h1>Datos Registrados</h1>
+        <p>Elecciones Generales 2025 — Registro Oficial</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <div class="card-title">
+          <h2>DATOS REGISTRADOS</h2>
+        </div>
+
+        <div class="grid">
+          <div class="cell label">Institución</div>
+          <div class="cell value">PREMIUM CAR</div>
+
+          <div class="cell label">Conductor</div>
+          <div class="cell value">BRANDON MAURICIO MONTAÑO VARAS</div>
+
+          <div class="cell label">Licencia para conducir</div>
+          <div class="cell value">13431164</div>
+
+          <div class="cell label">Marca vehículo</div>
+          <div class="cell value">VOLKSWAGEN</div>
+
+          <div class="cell label">Tipo de Vehículo</div>
+          <div class="cell value">GOLF</div>
+
+          <div class="cell label">Año del vehículo</div>
+          <div class="cell value">1998</div>
+
+          <div class="cell label">Placa</div>
+          <div class="cell value">666RTB</div>
+
+          <div class="cell label">Color</div>
+          <div class="cell value">PLATEADO</div>
+
+          <div class="cell label">Solicitante</div>
+          <div class="cell value">RONAL JUSTINIANO EGUEZ</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Documento informativo — Tribunal Supremo Electoral
+      <br>© 2025 Elecciones Generales de Bolivia
+    </footer>
+  </div>
+</body>
+</html>
