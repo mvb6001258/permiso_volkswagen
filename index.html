@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elecciones Generales 2025 — Datos Registrados</title>
+  <title>Elecciones Subnacionales 2026 Santa Cruz — Datos Registrados</title>
   <style>
     :root {
-      --rojo: #d32f2f;
-      --amarillo: #fbc02d;
-      --verde: #388e3c;
-      --bg: #f8f8f8;
+      /* Colores de Santa Cruz: Verde, Blanco, Verde */
+      --verde-oscuro: #1b5e20; /* Un verde más fuerte para contraste */
+      --verde-principal: #388e3c; /* El verde original de la bandera */
+      --blanco: #ffffff;
+      
+      --bg: #f0f4f0; /* Fondo ligeramente verdoso muy claro */
       --paper: #fff;
       --ink: #222;
       --muted: #666;
@@ -33,60 +35,48 @@
       overflow: hidden;
     }
 
-    /* Marca de agua */
+    /* Marca de agua actualizada */
     .page::after {
-      content: "ELECCIONES GENERALES 2025";
+      content: "ELECCIONES SUBNACIONALES 2026 - SANTA CRUZ";
       position: absolute;
       inset: 0;
       text-align: center;
       top: 30%;
-      font-size: 60px;
+      font-size: 40px; /* Un poco más pequeña para que quepa */
       font-weight: 800;
-      color: rgba(0,0,0,0.05);
+      color: rgba(56, 142, 60, 0.05); /* Verde muy tenue */
       transform: rotate(-20deg);
       letter-spacing: 0.1em;
       pointer-events: none;
       user-select: none;
     }
 
-    /* Franja tricolor */
+    /* Franja tricolor de Santa Cruz (Verde - Blanco - Verde) */
     .ribbon {
-      background: linear-gradient(90deg, var(--rojo), var(--amarillo), var(--verde));
-      height: 10px;
+      background: linear-gradient(90deg, var(--verde-principal) 0%, var(--verde-principal) 33%, var(--blanco) 33%, var(--blanco) 66%, var(--verde-principal) 66%, var(--verde-principal) 100%);
+      height: 12px;
       width: 100%;
+      border-bottom: 1px solid #ddd;
     }
 
     header {
-      padding: 30px 28px 12px;
+      padding: 20px 28px 12px;
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 25px;
       border-bottom: 1px solid #eee;
     }
 
-    .seal {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 50% 50%, #fff 0 26px, transparent 26px),
-                  conic-gradient(var(--rojo) 0 33%, var(--amarillo) 33% 66%, var(--verde) 66% 100%);
-      display: grid;
-      place-items: center;
-      box-shadow: 0 0 0 4px #fff, 0 0 0 6px #ccc;
-    }
-    .seal span {
-      font-weight: 900;
-      font-size: 12px;
-      color: #000;
-      background: #fff;
-      padding: 2px 6px;
-      border-radius: 999px;
+    /* Contenedor para el logo del TED (image_0.png) */
+    .logo-ted {
+      max-height: 80px;
+      width: auto;
     }
 
     .headings h1 {
       margin: 0;
       font-size: 26px;
-      color: var(--rojo);
+      color: var(--verde-oscuro); /* Título en verde oscuro */
     }
     .headings p {
       margin: 4px 0 0;
@@ -96,6 +86,19 @@
 
     main {
       padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Contenedor para el logo de Elecciones Subnacionales (image_1.png) */
+    .logo-elecciones-container {
+      text-align: center;
+      padding: 10px 0;
+    }
+    .logo-elecciones {
+      max-height: 120px;
+      width: auto;
     }
 
     .card {
@@ -105,7 +108,8 @@
     }
 
     .card .card-title {
-      background: linear-gradient(90deg, rgba(211,47,47,0.1), rgba(251,192,45,0.1), rgba(56,142,60,0.1));
+      /* Degradado suave con los colores de Santa Cruz */
+      background: linear-gradient(90deg, rgba(56,142,60,0.1) 0%, rgba(255,255,255,0.1) 50%, rgba(56,142,60,0.1) 100%);
       padding: 14px 18px;
       border-bottom: 1px solid #e5e7eb;
     }
@@ -113,7 +117,8 @@
     .card h2 {
       margin: 0;
       font-size: 18px;
-      color: var(--ink);
+      color: var(--verde-oscuro);
+      text-align: center;
     }
 
     .grid {
@@ -130,10 +135,12 @@
       font-weight: bold;
       background: #fafafa;
       border-right: 1px solid #eee;
+      color: #444;
     }
 
     .value {
       color: #111;
+      font-weight: 500;
     }
 
     footer {
@@ -141,9 +148,12 @@
       font-size: 12px;
       color: #777;
       border-top: 1px solid #eee;
+      text-align: center;
+      background: #fafafa;
     }
 
     @media (max-width: 700px) {
+      header { flex-direction: column; text-align: center; gap: 10px; }
       .grid { grid-template-columns: 1fr; }
       .label { border-right: none; border-bottom: 1px solid #eee; }
     }
@@ -151,7 +161,8 @@
     @media print {
       body { background: #fff; }
       .page { box-shadow: none; border-radius: 0; margin: 0; }
-      .page::after { opacity: 0.05; }
+      .page::after { opacity: 0.03; }
+      .ribbon { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
   </style>
 </head>
@@ -160,17 +171,22 @@
     <div class="ribbon"></div>
 
     <header>
-      <div class="seal"><span>EG</span></div>
+      <img src="image_0.png" alt="Logo TED Santa Cruz" class="logo-ted" />
+      
       <div class="headings">
         <h1>Datos Registrados</h1>
-        <p>Elecciones Generales 2025 — Registro Oficial</p>
+        <p>Elecciones Subnacionales 2026 — Santa Cruz</p>
       </div>
     </header>
 
     <main>
+      <div class="logo-elecciones-container">
+        <img src="image_1.png" alt="Elecciones Subnacionales 2026" class="logo-elecciones" />
+      </div>
+
       <section class="card">
         <div class="card-title">
-          <h2>DATOS REGISTRADOS</h2>
+          <h2>FORMULARIO DE REGISTRO</h2>
         </div>
 
         <div class="grid">
@@ -205,8 +221,8 @@
     </main>
 
     <footer>
-      Documento informativo — Tribunal Supremo Electoral
-      <br>© 2025 Elecciones Generales de Bolivia
+      Documento informativo — Tribunal Electoral Departamental de Santa Cruz
+      <br>© 2026 Elecciones Subnacionales - Bolivia
     </footer>
   </div>
 </body>
